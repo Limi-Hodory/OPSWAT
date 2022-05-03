@@ -14,6 +14,8 @@ pip install -r requirements.txt
 ```
 python main.py
 ```
+<img width="356" alt="image" src="https://user-images.githubusercontent.com/83369474/166484243-5ca73901-d57e-42eb-8cd6-d0ff08868514.png">
+
 ## Example 2
 ```
 python scanFile.py -h 10.0.0.168 -k apikey -f "C:\Users\file.txt" 
@@ -33,8 +35,6 @@ Command | Detail
 -w, --workflow | active workflows, allowed values: mcl-metadefender-rest-sanitize-disabled-unarchive
 -p, --p | password for password protected files
  
-
-![image](https://user-images.githubusercontent.com/83369474/166483648-213132d8-476c-4bd2-a7b8-e4d47e97ab7d.png)
 
 
 ## Author
