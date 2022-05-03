@@ -30,6 +30,8 @@ def scan_file_syn(host,apikey, file, filename ,workflow="File process", archive_
         }
         payload = file
         response = requests.request("POST", url, headers=headers, data=payload)
+        if response.status_code !=200: #Check if the request was successful
+            raise Exception(f"\nrequest filed with status code: {response.status_code}")
         return response.json()["data_id"]
 
 # Return all the info about the file
@@ -66,7 +68,3 @@ def display_results(result):
     if is_blocked== "Blocked":
         string+= f"The file was blocked, blocked reasons: {blocked_reasons}\n"
     return string
-
-
-# result= get_file_info(host,"6adef5f24f6e4085bf81ac06778e9ecc",apikey)
-# print(display_results(result))

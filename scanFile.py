@@ -3,6 +3,7 @@ import sys
 import AnalyzeFile
 import argparse
 import time
+import os
 
 
 
@@ -18,13 +19,11 @@ def parse_arguments():
                         help="Specify a file location that should be scanned")
 
     # Non required Arguments
-    parser.add_argument("-n", "--name", dest="name", required=False, default=None,
-                        help="flag to preserve file name in scan")
-    #archivepwd
+    # Archivepwd
     parser.add_argument("-p", "--password", dest="pwd", required=False, default=None,
                         help="password if submitted file is password protected (archive pwd)-not required ")
 
-    #active workflows (mcl-metadefender-rest-sanitize-disabled-unarchive)
+    # Active workflows (mcl-metadefender-rest-sanitize-disabled-unarchive)
     parser.add_argument("-w", "--workflow", dest="workflow", default="File process",
                         help="active workflows, allowed values: File process-mcl-metadefender-Kiosk-Meta-Defender Vault-disabled-unarchive")
 
@@ -54,9 +53,10 @@ if __name__ == '__main__':
     try:
         f= open(args.file , "rb")#read binary
         file= f.read()
+        
     except IOError:
             print("File not accessible, check the file path")
-    file_name= args.name
+    file_name=os.path.basename(args.file)
     workflow= args.workflow
     archive_pwd= args.pwd
 

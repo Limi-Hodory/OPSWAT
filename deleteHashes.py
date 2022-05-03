@@ -7,7 +7,8 @@ def delete_from_blocklist(hashes_file_path, apikey, host):
     try:
         df = pd.read_csv(hashes_file_path)
     except Exception:
-        print("Incorrect file path/file does not exist")
+        print("\nIncorrect file path/file does not exist")
+        return
     for i in range(len(df)) : #Foreach row in the hashes file- send the row to blocklist
         hash=df.loc[i, "hash"]  
         apicall(hash,apikey,host)
