@@ -10,7 +10,7 @@ Python 3.10
 ```
 pip install -r requirements.txt
 ```
-## Example 1
+## Example 1 (recommended)
 ```
 python main.py
 ```
@@ -34,6 +34,7 @@ Command | Detail
 -p, --p | password for password protected files
  
 
+![image](https://user-images.githubusercontent.com/83369474/166483648-213132d8-476c-4bd2-a7b8-e4d47e97ab7d.png)
 
 
 ## Author
